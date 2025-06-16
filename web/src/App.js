@@ -37,7 +37,7 @@ function App() {
   }
 
   const sendColorChoices = async (ourColorChoices) => {
-    await fetch("http://localhost:4000/api/colors", {
+    await fetch(`${process.env.REACT_APP_API_URL}/api/colors`, {
       method: "POST",
       body: await JSON.stringify({colorChoices: ourColorChoices}),
       headers: {
